@@ -17,5 +17,5 @@ jobs:
       run: g++ src/calc.cpp -o calc
 
     - name: Run addition test
-      run: echo "2 + 3" | ./calc
+      run: echo "2 3" | ./calc
 
