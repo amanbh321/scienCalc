@@ -14,8 +14,8 @@ jobs:
       uses: actions/checkout@v4
 
     - name: Compile calculator
-      run: g++ src/calculator.cpp -o calculator
+      run: g++ src/calc.cpp -o calc
 
     - name: Run addition test
-      run: echo "2 + 3" | ./calculator
+      run: echo "2 + 3" | ./calc
 
