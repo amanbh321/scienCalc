@@ -25,3 +25,6 @@ jobs:
     - name: Run multiplication test
       run: echo "5 * 3" | ./calc
 
+    - name: Run division test
+      run: echo "10 / 2" | ./calc
+
