@@ -1,4 +1,4 @@
-name: C++ Calculator CI
+name: C++ Calculator CI with Docker
 
 on:
   push:
@@ -6,25 +6,24 @@ on:
   pull_request:
 
 jobs:
-  build:
+  docker-build-test:
     runs-on: ubuntu-latest
 
     steps:
     - name: Checkout code
       uses: actions/checkout@v4
 
-    - name: Compile calculator
-      run: g++ src/calc.cpp -o calc
+    - name: Build Docker image
+      run: docker build -t calculator .
 
-    - name: Run addition test
-      run: echo "5 + 3" | ./calc
+    - name: Test addition inside Docker
+      run: echo "10 + 2" | docker run -i calculator
 
-    - name: Run subtraction test
-      run: echo "5 - 3" | ./calc
+    - name: Test Subtraction inside Docker
+      run: echo "10 - 2" | docker run -i calculator
 
-    - name: Run multiplication test
-      run: echo "5 * 3" | ./calc
+    - name: Test multiplication inside Docker
+      run: echo "10 * 2" | docker run -i calculator
 
-    - name: Run division test
-      run: echo "10 / 2" | ./calc
-
+    - name: Test Division inside Docker
+      run: echo "10 / 2" | docker run -i calculator
