@@ -9,6 +9,10 @@ int subtract(int a, int b) {
     return a - b;
 }
 
+int multiply(int a, int b) {
+    return a * b;
+}
+
 int main() {
     int a, b;
     char op;
@@ -16,9 +20,14 @@ int main() {
 
     if (op == '+') {
         cout << add(a, b) << endl;
-    } else if (op == '-') {
+    } 
+    else if (op == '-') {
         cout << subtract(a, b) << endl;
-    } else {
+    } 
+    else if (op == '*') {
+            cout << multiply(a, b) << endl;
+    }
+    else {
         cout << "Invalid operator" << endl;
     }
 

@@ -22,3 +22,6 @@ jobs:
     - name: Run subtraction test
       run: echo "5 - 3" | ./calc
 
+    - name: Run multiplication test
+      run: echo "5 * 3" | ./calc
+
