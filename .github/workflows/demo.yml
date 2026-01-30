@@ -1,0 +1,21 @@
+name: C++ Calculator CI
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+
+    - name: Compile calculator
+      run: g++ src/calculator.cpp -o calculator
+
+    - name: Run addition test
+      run: echo "2 + 3" | ./calculator
+
